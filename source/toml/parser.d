@@ -3,6 +3,7 @@ module toml.parser;
 import toml.grammar;
 import pegged.grammar;
 import std.array: split;
+import std.conv: to;
 import std.exception;
 import std.file : readText;
 
@@ -17,7 +18,7 @@ enum TOMLType {
 };
 
 class TOMLException: Exception {
-    this(string msg, string file="parser", ulong line=111) {
+    this(string msg, string file="parser", size_t line=111) {
         super(msg, file, line);
     }
 }
